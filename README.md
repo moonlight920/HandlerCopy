@@ -1,0 +1,4 @@
+# HandlerCopy
+仿写Android的Handler机制
+
+此Demo有助于加深对Android系统中Handler原理的理解
