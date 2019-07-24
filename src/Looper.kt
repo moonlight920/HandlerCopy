@@ -7,6 +7,8 @@ class Looper {
     companion object {
 
         /**
+         * ThreadLocal是线程本地类，特点是只有线程自己持有，其他线程无法访问
+         *
          * 保证每个线程有唯一的Looper
          */
         private val sThreadLocal = ThreadLocal<Looper>()
@@ -23,12 +25,17 @@ class Looper {
                 val msg = looper.msgQueue.next() // 阻塞
                 msg ?: return
 
-                println("拿到消息:${msg.arg1}")
+                when {
+                    msg.arg1 != null -> println("message arg1:${msg.arg1}")
+                    msg.arg2 != null -> println("message arg2:${msg.arg2}")
+                }
             }
         }
 
         /**
          * 为当前线程准备Looper
+         *
+         * 每个线程只能创建一个Looper，即同一线程中，prepare只能调用一次，否则报错
          */
         fun prepare() {
             if (sThreadLocal.get() != null) {

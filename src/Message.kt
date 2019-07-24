@@ -1,5 +1,6 @@
 class Message(var target: Handler? = null) {
-    var arg1 = 0
+    var arg1: Int? = null
+    var arg2: String? = null
 
     /**
      * 这个消息需要在什么时间处理
