@@ -1,4 +1,6 @@
-# HandlerCopy
-仿写Android的Handler机制
+# AndroidCopy
 
-此Demo有助于加深对Android系统中Handler原理的理解
+对一些Android中不易理解的设计进行仿写，方便理解
+
+* Handler 机制
+* Context 装饰模式
