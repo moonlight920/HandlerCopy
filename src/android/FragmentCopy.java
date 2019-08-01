@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+/**
+ * 模拟android系统实现Fragment机制
+ */
 public class FragmentCopy {
     public static void main(String[] args) {
 
