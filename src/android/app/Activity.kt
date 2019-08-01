@@ -23,4 +23,6 @@ open class Activity : ContextThemeWrapper() {
     protected open fun onCreate() {
         // balabala
     }
+
+
 }

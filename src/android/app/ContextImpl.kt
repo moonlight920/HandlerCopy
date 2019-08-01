@@ -27,6 +27,13 @@ class ContextImpl : Context() {
         //  ActivityManager.getService().broadcastIntent(intent)
     }
 
+    override fun startActivity(intent: Intent) {
+        // 调用系统服务开启Activity
+//        mMainThread.getInstrumentation().execStartActivity(
+//            getOuterContext(), mMainThread.getApplicationThread(), null,
+//            (Activity) null, intent, -1, options);
+    }
+
     companion object {
         /**
          * 根据一些参数，创建一个Activity需要的context

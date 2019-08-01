@@ -36,4 +36,8 @@ open class ContextWrapper(base: Context?) : Context() {
         }
         mBase = base
     }
+
+    override fun startActivity(intent: Intent) {
+        mBase!!.startActivity(intent)
+    }
 }

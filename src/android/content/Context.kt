@@ -21,4 +21,9 @@ abstract class Context {
      * 动态注册广播
      */
     abstract fun registerReceiver(receiver: BroadcastReceiver): Intent
+
+    /**
+     * 启动一个Activity
+     */
+    abstract fun startActivity(intent: Intent)
 }
