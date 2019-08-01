@@ -21,14 +21,15 @@ public class ContextCopy {
         MyActivity myActivity = new MyActivity();
 
         // 2.传入一个基本的实现对象
-        Context contextImpl = new ContextImpl();
-        System.out.println("原始实现：" + contextImpl.getResources().getTAG());
-        myActivity.attach(contextImpl);
+        Context activityContextImpl = ContextImpl.createActivityContext("activityInfo");
+        System.out.println("原始实现：" + activityContextImpl.getResources().getTAG());
+        myActivity.attach(activityContextImpl);
 
         // 3.调用函数，输出的是包装之后的结果
         System.out.println("装饰后Activity的实现：" + myActivity.getResources().getTAG());
 
 
+        Context contextImpl = new ContextImpl();
         // 其他装饰类的实现
         MyService myService = new MyService();
         myService.attach(contextImpl);

@@ -26,4 +26,14 @@ class ContextImpl : Context() {
         // 调用系统服务发送广播
         //  ActivityManager.getService().broadcastIntent(intent)
     }
+
+    companion object {
+        /**
+         * 根据一些参数，创建一个Activity需要的context
+         */
+        @JvmStatic
+        fun createActivityContext(xxx: Any): ContextImpl {
+            return ContextImpl()
+        }
+    }
 }
