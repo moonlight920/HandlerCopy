@@ -1,3 +1,5 @@
+package android.os
+
 class MessageQueue {
     /**
      * 当前队列的第一条消息
@@ -15,7 +17,7 @@ class MessageQueue {
             // 2. 有消息进入队列被唤醒
             // 3. 取出消息，判断时间，返回，否则继续阻塞
 
-            val now = SystemClock.uptimeMillis()
+            val now = Util.uptimeMillis()
 
             val msg = mFirstMsg
             if (msg != null && msg.time < now) {

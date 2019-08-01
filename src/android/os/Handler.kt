@@ -1,3 +1,5 @@
+package android.os
+
 class Handler(looper: Looper? = null) {
     // handler的looper，构造时创建
     private val mLooper: Looper? = looper ?: Looper.myLooper()
@@ -10,7 +12,7 @@ class Handler(looper: Looper? = null) {
     fun sendMessage(msg: Message) {
         msg.target = this
         // 入队
-        mMsgQueue.enqueueMsg(msg, SystemClock.uptimeMillis())
+        mMsgQueue.enqueueMsg(msg, Util.uptimeMillis())
     }
 
     /**
@@ -19,6 +21,6 @@ class Handler(looper: Looper? = null) {
     fun sendMessageDelay(msg: Message, delay: Long) {
         msg.target = this
         // 入队
-        mMsgQueue.enqueueMsg(msg, SystemClock.uptimeMillis() + delay)
+        mMsgQueue.enqueueMsg(msg, Util.uptimeMillis() + delay)
     }
 }

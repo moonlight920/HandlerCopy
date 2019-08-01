@@ -1,3 +1,8 @@
+package android;
+
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 
 public class HandlerCopy {
 

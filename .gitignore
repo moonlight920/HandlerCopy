@@ -1,3 +1,5 @@
 *.iml
 .idea
 out
+src/temp
+.DS_Store

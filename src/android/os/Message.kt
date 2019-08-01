@@ -1,3 +1,5 @@
+package android.os
+
 class Message(var target: Handler? = null) {
     var arg1: Int? = null
     var arg2: String? = null
