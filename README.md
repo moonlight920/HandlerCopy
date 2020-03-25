@@ -4,10 +4,10 @@
 
 如何深刻的掌握知识，不是学习很多次，而是去实践它。
 
-* Handler机制
-* Fragment
-* Context装饰者模式
-* Activity使用Binder与AMS通信
+* [Handler机制](/src/android/HandlerCopy.java)
+* [Fragment](/src/android/FragmentCopy.java)
+* [Context装饰者模式](/src/android/ContextCopy.java)
+* [Activity使用Binder与AMS通信](/src/android/BinderCopy.kt)
 
 为了弄懂Handler的机制和流程，脱离Android SDK，在Idea上实现了一下。
 
