@@ -8,7 +8,7 @@ class Resources {
      * 用于方便演示，实现的一个装饰方法
      */
     fun wrapperWith(str: String): Resources {
-        TAG = "$str[$TAG]"
+        TAG = "$str 加工后的 [$TAG]"
         return this
     }
 

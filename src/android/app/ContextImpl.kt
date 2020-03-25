@@ -34,6 +34,14 @@ class ContextImpl : Context() {
 //            (Activity) null, intent, -1, options);
     }
 
+    override fun getSystemService(name: String): Any? {
+        return SystemServiceRegistry.getSystemService(this, name)
+    }
+
+    override fun getSystemServiceName(serviceClass: Class<*>): String? {
+        return SystemServiceRegistry.getSystemServiceName(serviceClass)
+    }
+
     companion object {
         /**
          * 根据一些参数，创建一个Activity需要的context

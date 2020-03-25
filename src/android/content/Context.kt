@@ -26,4 +26,9 @@ abstract class Context {
      * 启动一个Activity
      */
     abstract fun startActivity(intent: Intent)
+
+
+
+    abstract fun getSystemService(name: String): Any?
+    abstract fun getSystemServiceName(serviceClass: Class<*>): String?
 }

@@ -40,4 +40,12 @@ open class ContextWrapper(base: Context?) : Context() {
     override fun startActivity(intent: Intent) {
         mBase!!.startActivity(intent)
     }
+
+    override fun getSystemService(name: String): Any? {
+        return mBase!!.getSystemService(name)
+    }
+
+    override fun getSystemServiceName(serviceClass: Class<*>): String? {
+        return mBase!!.getSystemServiceName(serviceClass)
+    }
 }
