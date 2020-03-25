@@ -1,8 +1,13 @@
 # AndroidCopy
 
-> 对一些Android中不易理解的设计进行仿写，方便理解
+> 对一些Android中不易理解的设计，使用纯粹的java或kotlin代码进行仿写，方便理解记忆
 
 如何深刻的掌握知识，不是学习很多次，而是去实践它。
+
+* Handler机制
+* Fragment
+* Context装饰者模式
+* Activity使用Binder与AMS通信
 
 为了弄懂Handler的机制和流程，脱离Android SDK，在Idea上实现了一下。
 
