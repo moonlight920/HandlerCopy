@@ -10,12 +10,22 @@ public class HandlerCopy {
         //1. 创建当前线程
         Looper.Companion.prepare();
 
-        Handler handler = new Handler();
+        Handler handler = new MyHandler();
 
         // 因为主线程阻塞中，使用其他线程模拟发消息
         new OtherThread(handler).start();
 
         Looper.Companion.loop();
+    }
+
+    static class MyHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.getArg2() != null) {
+                System.out.println("message arg2:" + msg.getArg2());
+            }
+        }
     }
 
     /**
@@ -40,9 +50,11 @@ public class HandlerCopy {
                     if (count % 5 == 0) {
                         Message msg = new Message();
                         msg.setArg2("change UI immediately");
+                        System.out.println("发消息 immediately");
                         mHandler.sendMessage(msg);
 
                         Message delayMsg = new Message();
+                        System.out.println("发消息 dealy 2500");
                         delayMsg.setArg2("change UI dealy 2500");
                         mHandler.sendMessageDelay(delayMsg, 2500);
                     }

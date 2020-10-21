@@ -7,6 +7,10 @@ import android.content.res.Resources
  * Context接口类，定义基本功能
  */
 abstract class Context {
+    companion object {
+        const val WINDOW_SERVICE = "window"
+        const val ACTIVITY_SERVICE = "activity"
+    }
     /**
      * 获取app包中的资源
      */

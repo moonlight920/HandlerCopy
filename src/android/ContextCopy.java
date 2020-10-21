@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.server.am.Token;
 
 public class ContextCopy {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class ContextCopy {
         // 2.传入一个基本的实现对象
         Context activityContextImpl = ContextImpl.createActivityContext("activityInfo");
         System.out.println("原始实现：" + activityContextImpl.getResources().getTAG());
-        myActivity.attach(activityContextImpl);
+        myActivity.attach(activityContextImpl, new Token());
 
         // 3.调用函数，输出的是包装之后的结果
         System.out.println("装饰后Activity的实现：" + myActivity.getResources().getTAG());
@@ -38,7 +39,7 @@ public class ContextCopy {
 
         // 有一个新的需求，功能完全要自己实现
         ResourcesActivity resourcesActivity = new ResourcesActivity();
-        resourcesActivity.attach(contextImpl);
+        resourcesActivity.attach(contextImpl, new Token());
         System.out.println("装饰后ResourcesActivity的实现：" + resourcesActivity.getResources().getTAG());
 
 

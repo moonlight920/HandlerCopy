@@ -26,11 +26,8 @@ class Looper {
             while (true) {
                 val msg = looper.msgQueue.next() // 阻塞
                 msg ?: return
+                msg.target?.dispatchMessage(msg)
 
-                when {
-                    msg.arg1 != null -> println("message arg1:${msg.arg1}")
-                    msg.arg2 != null -> println("message arg2:${msg.arg2}")
-                }
             }
         }
 

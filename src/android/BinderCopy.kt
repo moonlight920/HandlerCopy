@@ -3,6 +3,7 @@ package android
 import android.app.Activity
 import android.app.ContextImpl
 import android.app.ActivityManager
+import android.server.am.Token
 
 
 class MyActivity : Activity() {
@@ -25,7 +26,8 @@ class MyActivity : Activity() {
         @JvmStatic
         fun main(args: Array<String>) {
             val activity = MyActivity()
-            activity.attach(ContextImpl())
+            val activityToken = Token()
+            activity.attach(ContextImpl(), activityToken)
             activity.onCreate()
         }
     }
