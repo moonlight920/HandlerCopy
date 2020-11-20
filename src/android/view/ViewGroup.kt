@@ -32,4 +32,11 @@ abstract class ViewGroup : View(), ViewParent, ViewManager {
     }
 
     abstract override fun onLayout()
+
+    override fun onMeasure() {
+        super.onMeasure()
+        childViewList.forEach {
+            it.measure()
+        }
+    }
 }

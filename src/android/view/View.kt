@@ -11,6 +11,7 @@ open class View {
 
     open fun measure() {
         println("${this.javaClass.simpleName} measure")
+        onMeasure()
     }
 
     open fun layout() {
@@ -19,6 +20,10 @@ open class View {
     }
 
     protected open fun onLayout() {
+
+    }
+
+    protected open fun onMeasure() {
 
     }
 
