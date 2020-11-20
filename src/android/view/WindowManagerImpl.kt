@@ -10,10 +10,6 @@ class WindowManagerImpl(private val mContext: Context, private val parentWindow:
         WindowManagerGlobal.addView(view, parentWindow)
     }
 
-    override fun updateViewLayout(view: View) {
-
-    }
-
     override fun removeView(view: View) {
 
     }

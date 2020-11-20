@@ -24,13 +24,22 @@ abstract class Window(private val mContext: Context) {
     }
 
     abstract fun getDecorView(): View
+    abstract fun setContentView(view: View)
 }
 
 class PhoneWindow(context: Context) : Window(context) {
 
-    private val mDecorView = View()
+    init {
+        println("PhoneWindow init")
+    }
+
+    private val mDecor = DecorView()
 
     override fun getDecorView(): View {
-        return mDecorView
+        return mDecor
+    }
+
+    override fun setContentView(view: View) {
+        mDecor.addView(view)
     }
 }

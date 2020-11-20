@@ -6,7 +6,7 @@ import android.os.IBinder
 class ActivityManagerService private constructor() : IActivityManager.Stub() {
 
     override fun xxx(params: String) {
-        print("来自AMS xxx $params")
+        println("来自AMS xxx $params")
     }
 
     override fun asBinder(): IBinder {

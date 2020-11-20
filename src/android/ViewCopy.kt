@@ -2,21 +2,23 @@ package android
 
 import android.app.Activity
 import android.app.ContextImpl
-import android.app.ActivityManager
+import android.os.Looper
 import android.server.am.Token
+import android.view.View
 
 
-class TestBinderActivity : Activity() {
+class ViewActivity : Activity() {
+
+    private val mView by lazy { View() }
 
     override fun onCreate() {
-
         super.onCreate()
+        setContentView(mView)
 
-        val name = getSystemServiceName(ActivityManager::class.java)
-        if (name != null) {
-            val service = getSystemService(name) as? ActivityManager
-            service?.xxx("hello AMS")
-        }
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     companion object {
@@ -25,10 +27,13 @@ class TestBinderActivity : Activity() {
          */
         @JvmStatic
         fun main(args: Array<String>) {
-            val activity = TestBinderActivity()
+            Looper.prepare()
+
+            val activity = ViewActivity()
             val activityToken = Token()
             activity.attach(ContextImpl(), activityToken)
-            activity.onCreate()
+
+            Looper.loop()
         }
     }
 }

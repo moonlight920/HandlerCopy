@@ -15,12 +15,15 @@ object WindowManagerGlobal {
     private val mRoots = arrayListOf<ViewRootImpl>()
 
     /**
-     * 添加window
+     * 添加window，每个window构造一个ViewRootImpl，作为Decor的parent
      *
      * @param view window中的DecorView
      */
     fun addView(view: View, parentWindow: Window?) {
         val root = ViewRootImpl()
+        // 将decor的parent设置为ViewRootImpl
+        println("DecorView绑定ViewRootImpl")
+        view.setParent(root)
 
         mViews.add(view)
         mRoots.add(root)

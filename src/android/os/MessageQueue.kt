@@ -12,8 +12,8 @@ class MessageQueue {
     fun next(): Message? {
         while (true) {
             // 1. block 开始阻塞线程..........模拟线程阻塞，实际调用了native方法
-            Thread.sleep(1000)
-            println("查看队列中的message......")
+            Thread.sleep(16)
+//            println("查看队列中的message......")
             // 2. 有消息进入队列被唤醒
             // 3. 取出消息，判断时间，返回，否则继续阻塞
 
