@@ -1,14 +1,13 @@
-package android.view
+package android.widget
 
-class DecorView : ViewGroup() {
+import android.view.ViewGroup
 
-    init {
-        println("DecorView init")
-    }
+class FrameLayout : ViewGroup() {
 
     override fun onLayout() {
         childViewList.forEach {
             it.layout()
         }
     }
+
 }

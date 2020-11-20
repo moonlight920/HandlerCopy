@@ -9,16 +9,32 @@ open class View {
     private val mRenderNode = RenderNode.create()
 
 
-    fun measure() {
-        println("View measure")
+    open fun measure() {
+        println("${this.javaClass.simpleName} measure")
     }
 
-    fun layout() {
-        println("View layout")
+    open fun layout() {
+        println("${this.javaClass.simpleName} layout")
+        onLayout()
     }
 
-    fun draw(canvas: Canvas) {
-        println("View draw")
+    protected open fun onLayout() {
+
+    }
+
+    open fun draw(canvas: Canvas) {
+        println("${this.javaClass.simpleName} draw")
+        onDraw(canvas)
+        dispatchDraw(canvas);
+    }
+
+    protected open fun dispatchDraw(canvas: Canvas) {
+
+    }
+
+
+    open fun onDraw(canvas: Canvas) {
+
     }
 
     /**
@@ -30,7 +46,11 @@ open class View {
 
     fun getParent() = mParent
 
-    fun invalidate() {
+    open fun requestLayout() {
+        mParent?.requestLayout()
+    }
+
+    open fun invalidate() {
         println("view invalidate")
         mParent?.invalidateChild(this)
     }

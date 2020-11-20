@@ -5,20 +5,19 @@ import android.app.ContextImpl
 import android.os.Looper
 import android.server.am.Token
 import android.view.View
+import android.widget.FrameLayout
 
 
 class ViewActivity : Activity() {
 
-    private val mView by lazy { View() }
+    class CustomView : View()
 
     override fun onCreate() {
         super.onCreate()
-        setContentView(mView)
+        val frameLayout = FrameLayout()
+        frameLayout.addView(CustomView())
+        setContentView(frameLayout)
 
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     companion object {
