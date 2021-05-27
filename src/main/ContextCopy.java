@@ -1,4 +1,4 @@
-package android;
+package main;
 
 import android.app.Activity;
 import android.app.ContextImpl;
@@ -7,11 +7,12 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Looper;
 import android.server.am.Token;
 
 public class ContextCopy {
     public static void main(String[] args) {
-
+        Looper.prepare();
         /**
          * 装饰模式：
          *

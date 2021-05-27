@@ -18,6 +18,7 @@ class Looper {
         /**
          * 开始执行循环
          */
+        @JvmStatic
         fun loop() {
             val looper = myLooper()
             looper ?: throw RuntimeException("This looper is not prepare")
@@ -36,6 +37,7 @@ class Looper {
          *
          * 每个线程只能创建一个Looper，即同一线程中，prepare只能调用一次，否则报错
          */
+        @JvmStatic
         fun prepare() {
             if (sThreadLocal.get() != null) {
                 throw RuntimeException("only one created looper")
@@ -46,6 +48,7 @@ class Looper {
         /**
          * 获取当前线程的Looper，需要先调用prepare
          */
+        @JvmStatic
         fun myLooper(): Looper? {
             return sThreadLocal.get()
         }
